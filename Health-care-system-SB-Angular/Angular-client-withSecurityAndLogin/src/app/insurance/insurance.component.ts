@@ -28,9 +28,9 @@ export class InsuranceComponent implements OnInit {
     private tss: TokenStorageService,
     private ps: PatientService,
     private renderer: Renderer2) { }
-
+    isAdmin= false ;
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C3E6FC');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     if(this.tss.getToken()){
         if(this.route.snapshot.params['id'] > 0){
           this.id = this.route.snapshot.params['id'];
@@ -82,7 +82,7 @@ export class InsuranceComponent implements OnInit {
       },
       error => console.log(error));
   }
-  
+
   save(){
     this.is.addInsurance(this.ins).subscribe((data)=>
     {
@@ -94,7 +94,7 @@ export class InsuranceComponent implements OnInit {
       console.log(error);
       alert('cannot save your data');
     });
-  
+
   }
   gotoNext(){
     if(this.id > 0){

@@ -18,7 +18,7 @@ export class MedicosListComponent implements OnInit {
   constructor(private router: Router, private ms: MedicosService, private tss: TokenStorageService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C1F8FF');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     if(this.tss.getToken()){
       this.getList();
     }
@@ -47,7 +47,7 @@ export class MedicosListComponent implements OnInit {
       .subscribe((response) => {
         console.log(response);
         alert('removed Medicos');
-       
+
       },
       error => console.log(error))
   }

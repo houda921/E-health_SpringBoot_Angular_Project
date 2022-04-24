@@ -33,7 +33,7 @@ export class MedicosComponent implements OnInit {
     private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C3E6FC');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     if(this.tss.getToken()){
       if(this.route.snapshot.params['id'] > 0){
         this.id = this.route.snapshot.params['id'];
@@ -79,7 +79,7 @@ export class MedicosComponent implements OnInit {
     }else{
       this.save();
     }
-    
+
   }
 
   update(){

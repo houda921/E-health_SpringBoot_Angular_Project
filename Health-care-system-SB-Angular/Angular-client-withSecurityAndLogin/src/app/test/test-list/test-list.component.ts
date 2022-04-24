@@ -18,7 +18,7 @@ export class TestListComponent implements OnInit {
   constructor( private router:Router,private ts:TestService, private tss: TokenStorageService, private renderer: Renderer2) { }
 
   ngOnInit() {
-    this.renderer.setStyle(document.body, 'background-color', '#C1F8FF');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     if(this.tss.getToken()){
       this.getList();
     }
@@ -26,7 +26,7 @@ export class TestListComponent implements OnInit {
       this.router.navigate(['login']);
     }
   }
-  
+
   getList(){
     this.ts.getAllTest()
       .subscribe((list) =>{
@@ -39,7 +39,7 @@ export class TestListComponent implements OnInit {
 
     gotoTest(){
       this.router.navigate(['test']);
-  
+
     }
 
     getTest(id:number){

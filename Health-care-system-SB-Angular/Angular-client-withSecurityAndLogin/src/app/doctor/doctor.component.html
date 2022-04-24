@@ -5,7 +5,7 @@
     </div>
         <div class="row justify-content-center align-items-center">
             <div class="col-10 col-md-8 col-lg-6">
-                
+
 <form name="docForm" (ngSubmit)="d.form.valid && onSubmit()" #d="ngForm" novalidate>
 
     <!-- docId -->
@@ -18,7 +18,7 @@
     </div> -->
 
     <!-- docName -->
-    <div class="form-group">
+    <div class="styled-input wide" class="form-group">
         <label for="doctorName">Name</label>
         <input type="text" name="doctorName" class="form-control" [(ngModel)]="doc.doctorName" #doctorName="ngModel" [ngClass]="{'is-invalid' : d.submitted && doctorName.invalid }" required />
         <div *ngIf="d.submitted && doctorName.invalid" class="invalid-feedback">
@@ -67,9 +67,12 @@
     </div>
     <br>
     <button class="btn btn-primary">{{btn}}</button>
-    <button class="btn btn-info" style="margin-left: 25px;" (click) ="reset()">reset</button>
+
+    <button class="btn-lrg submit-btn" class="btn btn-info" style="margin-left: 25px;" (click) ="reset()">reset</button>
     <br><br>
 </form>
 </div>
 </div>
 </div>
+
+

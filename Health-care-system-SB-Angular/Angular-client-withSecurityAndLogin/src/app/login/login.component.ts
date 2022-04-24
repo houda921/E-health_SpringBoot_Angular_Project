@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Renderer2} from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../service/login/login.service';
 import { TokenStorageService } from '../service/token-storage.service';
@@ -19,16 +19,21 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private ls: LoginService, private router: Router, private tokenStorage: TokenStorageService) { }
+  constructor(  private renderer: Renderer2 ,private ls: LoginService, private router: Router, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
+    this.renderer.setStyle(document.body, 'background-color', '#dff2f5');
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
       this.gotoIndex();
     }
   }
+  doSignUp(): void
+  {
+    this.router.navigate(['signup']);
 
+  }
   doLogin(): void {
     this.ls.login(this.form).subscribe(
       //if(this.form.username=="admin" && this.form.password=="admin123")
@@ -44,7 +49,7 @@ export class LoginComponent implements OnInit {
         {
           this.tokenStorage.getUser().roles='ROLE_ADMIN'
         }
-
+       
         alert('Logged In as ' + this.roles);
         this.gotoIndex();
       },

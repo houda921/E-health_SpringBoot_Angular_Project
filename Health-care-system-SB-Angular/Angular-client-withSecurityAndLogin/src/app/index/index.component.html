@@ -14,13 +14,13 @@
         <!-- <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet"> -->
               <div class="menu">
               <div class="title">
-                <h1><b>HEALTH HUB</b></h1>
-                <h6> Hospital Management System</h6></div>
-                <a (click)="logout()">Logout</a>
+                <h1><b>E-DOCTOR</b></h1>
+                <h6> Health Management System</h6></div>
+                <a (click)="logout()" class="btn btn-white btn-animated" >Logout</a>
                 <a (click)="about()">About us</a>
                 <a (click)="contact()">Contact</a>
                 <a (click)="home()">Home</a>
-                <a style = "color: rgb(21, 255, 157);">Hello {{ username }}</a>
+                <a style = "color: rgb(223, 234, 229);"> <h3> Hello {{ username }}</h3> </a>
               </div>
   </header>
 
@@ -28,7 +28,7 @@
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
     <a (click)="patinetList()">Patient</a>
     <a (click)="doctorList()">Doctor</a>
-    <a (click)="wardList()">Ward</a>
+
     <a (click)="departmentList()" *ngIf="showAdminBoard">Department</a>
     <a (click)="specializationList()" *ngIf="showAdminBoard">Specialization</a>
     <!--  -->

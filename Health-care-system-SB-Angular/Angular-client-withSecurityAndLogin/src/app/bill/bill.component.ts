@@ -37,7 +37,7 @@ export class BillComponent implements OnInit {
     private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C3E6FC');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7 ');
     if(this.ts.getToken()){
       this.getForm();
       this.getIns();
@@ -80,7 +80,7 @@ export class BillComponent implements OnInit {
   onSubmit(){
     console.log(this.bill);
     console.log(this.id);
-    
+
     if(this.id > 0) {
       this.update();
     }else{

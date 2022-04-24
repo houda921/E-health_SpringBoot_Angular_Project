@@ -5,8 +5,8 @@
     position: relative;
 } */
 
-.item img{  
-    width: 85.3em;
-    height: 39em;
+.item img{
+  width:1280 px;
+    height: 1920 px;
     z-index:1;
 }

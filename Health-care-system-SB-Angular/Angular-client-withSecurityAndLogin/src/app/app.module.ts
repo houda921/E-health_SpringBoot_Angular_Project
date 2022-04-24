@@ -15,7 +15,7 @@ import { PatientComponent } from './patient/patient.component';
 
 import { SpecializationComponent } from './specialization/specialization.component';
 import { TestComponent } from './test/test.component';
-import { WardComponent } from './ward/ward.component';
+
 import { DepartmentDetailsComponent } from './department/department-details/department-details.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { EmployeeDetailsComponent } from './employee/employee-details/employee-details.component';
@@ -32,8 +32,7 @@ import { SpecializationListComponent } from './specialization/specialization-lis
 import { SpecializationDetailsComponent } from './specialization/specialization-details/specialization-details.component';
 import { TestListComponent } from './test/test-list/test-list.component';
 import { TestDetailsComponent } from './test/test-details/test-details.component';
-import { WardLIstComponent } from './ward/ward-list/ward-list.component';
-import { WardDeatilsComponent } from './ward/ward-deatils/ward-deatils.component';
+
 import { DoctorListComponent } from './doctor/doctor-list/doctor-list.component';
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
 import { BillComponent } from './bill/bill.component';
@@ -56,6 +55,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { AboutUsComponent } from './menu/about-us/about-us.component';
 import { ContactUsComponent } from './menu/contact-us/contact-us.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
     PatientComponent,
     SpecializationComponent,
     TestComponent,
-    WardComponent,
+
     DepartmentDetailsComponent,
     DepartmentListComponent,
     EmployeeDetailsComponent,
@@ -86,8 +87,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
     SpecializationDetailsComponent,
     TestListComponent,
     TestDetailsComponent,
-    WardLIstComponent,
-    WardDeatilsComponent,
+
     DoctorListComponent,
     DoctorDetailsComponent,
     BillComponent,
@@ -109,7 +109,9 @@ import { InvoiceComponent } from './invoice/invoice.component';
     SignUpComponent,
     AboutUsComponent,
     ContactUsComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

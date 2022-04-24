@@ -7,15 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-
+  public persons : any = {};
   form: any = {};
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
+  role :any ;
 
   constructor(private ls: LoginService ,private router: Router) { }
 
   ngOnInit(): void {
+    this.persons ={admin :String, doctor :String ,patient:String}
   }
 
   onSubmit(): void {
@@ -24,6 +26,7 @@ export class SignUpComponent implements OnInit {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+  
         this.router.navigate(['login']);
       },
       err => {

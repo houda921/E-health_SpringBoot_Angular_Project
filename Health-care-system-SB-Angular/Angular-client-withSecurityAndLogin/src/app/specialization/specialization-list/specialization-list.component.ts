@@ -3,14 +3,15 @@ import { Router } from '@angular/router';
 import { SpecializationService } from 'src/app/service/Specialization/specialization.service';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
 import { Specialization } from '../Specialization';
-
+import { DoctorService } from 'src/app/service/Doctor/doctor.service';
+import { Doctor } from 'src/app/doctor/Doctor';
 @Component({
   selector: 'app-specialization-list',
   templateUrl: './specialization-list.component.html',
   styleUrls: ['./specialization-list.component.css']
 })
 export class SpecializationListComponent implements OnInit {
-
+  docList: Doctor[];
   ​​​​​​​​desc='';
   search;
   specList:Specialization[];
@@ -18,10 +19,10 @@ export class SpecializationListComponent implements OnInit {
   showAdminBoard = false;
   private roles: string[];
 
-  constructor(private router:Router,private ss:SpecializationService, private tss: TokenStorageService, private renderer: Renderer2) { }
+  constructor(private ds: DoctorService ,private router:Router,private ss:SpecializationService, private tss: TokenStorageService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C1F8FF');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     this.isLoggedIn = !!this.tss.getToken();
     if (this.isLoggedIn) {
       const user = this.tss.getUser();
@@ -43,7 +44,16 @@ export class SpecializationListComponent implements OnInit {
     });
     }
 
+    getListDoctor() {
+      this.ds.getAllDoctor().subscribe((list) => {
+     
+        this.docList = list;
+      },
+        error => {
+          console.log(error);
+        });
 
+    }
   gotoSpecialization(){
     this.router.navigate(['specialization']);
   }

@@ -14,15 +14,26 @@ export class PatientListComponent implements OnInit {
   desc:string ='';
   search;
   patList: Patient[];
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showDoctorBoard=false ;
+  username: string;
 
+  
   constructor(private router: Router,
     private ps: PatientService,
     private tss: TokenStorageService,
     private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C1F8FF');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     if(this.tss.getToken()){
+      const user = this.tss.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+
       this.getList();
     }
     else{

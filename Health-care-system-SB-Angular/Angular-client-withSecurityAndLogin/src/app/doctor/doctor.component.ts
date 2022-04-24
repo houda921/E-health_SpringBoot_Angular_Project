@@ -26,9 +26,10 @@ export class DoctorComponent implements OnInit {
   id;
   constructor(private router: Router, private ds: DoctorService, private route: ActivatedRoute, private tss: TokenStorageService, private spSer: SpecializationService, private deptSer: DepartmentService,
     private renderer: Renderer2) { }
-  
+
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C3E6FC');
+
+  this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     if(this.tss.getToken()){
       if (this.route.snapshot.params['id'] > 0) {
         this.btn = 'Update';

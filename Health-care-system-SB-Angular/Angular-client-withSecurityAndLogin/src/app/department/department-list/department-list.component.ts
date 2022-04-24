@@ -22,18 +22,20 @@ export class DepartmentListComponent implements OnInit {
   isLoggedIn = false;
   showAdminBoard = false;
   private roles: string[];
+  isAdmin= false ;
 
 
   constructor(private router: Router, private ds: DepartmentService, private tokenStorageService: TokenStorageService,
     private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C1F8FF');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.isAdmin=true ;
       this.getList();
     }
     else{

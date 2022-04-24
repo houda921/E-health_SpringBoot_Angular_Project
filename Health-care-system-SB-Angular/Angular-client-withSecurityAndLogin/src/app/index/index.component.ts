@@ -8,7 +8,7 @@ import { TokenStorageService } from '../service/token-storage.service';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  
+
   myImage:string ="assets/Image/image.jpg";
 
   private roles: string[];
@@ -44,14 +44,12 @@ export class IndexComponent implements OnInit {
   patinetList(){
     this.router.navigate(['patientList']);
   }
-  
+
   doctorList(){
     this.router.navigate(['doctorList']);
   }
 
-  wardList(){
-    this.router.navigate(['wardList']);
-  }
+ 
 
   departmentList(){
     this.router.navigate(['departmentList']);
@@ -64,7 +62,7 @@ export class IndexComponent implements OnInit {
   insuranceList(){
     this.router.navigate(['insuranceList']);
   }
-  
+
   billList(){
     this.router.navigate(['billList']);
   }

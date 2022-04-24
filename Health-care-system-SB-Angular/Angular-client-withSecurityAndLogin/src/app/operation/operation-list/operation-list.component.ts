@@ -18,7 +18,7 @@ export class OperationListComponent implements OnInit {
   constructor(private router: Router, private os: OperationService, private tss: TokenStorageService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C1F8FF');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     if(this.tss.getToken()){
       this.getList();
     }

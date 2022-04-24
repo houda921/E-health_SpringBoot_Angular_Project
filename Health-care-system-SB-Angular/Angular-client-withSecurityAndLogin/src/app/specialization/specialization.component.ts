@@ -23,7 +23,7 @@ export class SpecializationComponent implements OnInit {
   constructor(private router: Router,private ss:SpecializationService,private route:ActivatedRoute, private tss: TokenStorageService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C3E6FC');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     this.isLoggedIn = !!this.tss.getToken();
     if (this.isLoggedIn) {
       const user = this.tss.getUser();

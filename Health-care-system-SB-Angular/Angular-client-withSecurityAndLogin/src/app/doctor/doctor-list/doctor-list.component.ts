@@ -14,13 +14,27 @@ export class DoctorListComponent implements OnInit {
   desc: string = '';
   search;
   docList: Doctor[];
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showDoctorBoard=false ;
+  username: string;
+   isAdmin= false ;
+
 
   constructor(private router: Router, private ds: DoctorService, private tss: TokenStorageService,
     private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C1F8FF');
+    this.renderer.setStyle(document.body, 'background-color', '  #e6ecf7');
+
     if(this.tss.getToken()){
+      const user = this.tss.getUser();
+      this.roles = user.roles;
+       this.isAdmin=true;
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+
+
       this.getList();
     }else{
       this.router.navigate(['login']);
@@ -38,6 +52,9 @@ export class DoctorListComponent implements OnInit {
   }
   gotoDoctor() {
     this.router.navigate(['doctor']);
+  }
+  gotoDetails(id: number) {
+    this.router.navigate(['doctorDetail', id]);
   }
   getDoctor(id: number) {
     this.router.navigate(['doctorUpdate', id]);

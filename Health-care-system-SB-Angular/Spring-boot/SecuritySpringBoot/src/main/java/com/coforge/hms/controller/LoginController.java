@@ -101,6 +101,12 @@ public class LoginController {
 							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 					roles.add(adminRole);
 
+					
+				case "doctor":
+					Role doctorRole = roleRepository.findByName(ERole.ROLE_DOCTOR)
+							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+					roles.add(doctorRole);
+
 					break;
 				default:
 					Role userRole = roleRepository.findByName(ERole.ROLE_USER)
@@ -113,7 +119,7 @@ public class LoginController {
 		user.setRoles(roles);
 		userRepository.save(user);
 
-		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+		return ResponseEntity.ok(new MessageResponse( signUpRequest.getUsername() +" " +"registered successfully!"));
 	}
 	
 //	@GetMapping(value = "/")

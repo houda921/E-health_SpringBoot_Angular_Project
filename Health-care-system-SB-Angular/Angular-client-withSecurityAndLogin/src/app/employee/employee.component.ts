@@ -35,7 +35,7 @@ export class EmployeeComponent implements OnInit {
     private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C3E6FC');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     this.isLoggedIn = !!this.tss.getToken();
     if (this.isLoggedIn) {
       const user = this.tss.getUser();
@@ -75,7 +75,7 @@ getEmployee()
 
   onSubmit() {
     if(this.id>0){
-      this.update();  
+      this.update();
     }else{
       // this.save();
       this.check();
@@ -117,7 +117,7 @@ getEmployee()
       console.log(error);
       alert('can not save your data');
     });
-  
+
   }
   gotoNext()
   {

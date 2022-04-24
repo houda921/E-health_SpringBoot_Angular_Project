@@ -14,19 +14,19 @@ export class InsuranceListComponent implements OnInit {
   desc:string='';
   search;
   insuranceList: Insurance[];
-  
+
   constructor(private router: Router, private is: InsuranceService, private tss: TokenStorageService,
     private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C1F8FF');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     if(this.tss.getToken()){
       this.getList();
     }else{
       this.router.navigate(['login']);
     }
   }
-  
+
   gotoInsurance(){
     this.router.navigate(['insurance']);
   }

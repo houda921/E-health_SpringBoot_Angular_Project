@@ -18,7 +18,7 @@ export class BillListComponent implements OnInit {
     private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(document.body, 'background-color', '#C1F8FF');
+    this.renderer.setStyle(document.body, 'background-color', '#e6ecf7');
     if(this.ts.getToken()){
       this.getList();
     }
@@ -35,7 +35,7 @@ export class BillListComponent implements OnInit {
       error => console.log(error));
   }
 
-  gotoBill(){ 
+  gotoBill(){
     this.router.navigate(['bill']);
   }
 

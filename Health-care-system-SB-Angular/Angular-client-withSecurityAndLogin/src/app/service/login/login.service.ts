@@ -16,6 +16,11 @@ export class LoginService {
   isLogin: boolean;
 
   constructor(private http: HttpClient) {}
+  // getRole():Observable<any[]>
+  // {
+  //   return this.http.post(AUTH_API+ 'signup' ,{})
+  // }
+
 
   login(credentials): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
@@ -28,6 +33,7 @@ export class LoginService {
     return this.http.post(AUTH_API + 'signup', {
       username: user.username,
       email: user.email,
+      role:user.role ,
       password: user.password
     }, httpOptions);
   }

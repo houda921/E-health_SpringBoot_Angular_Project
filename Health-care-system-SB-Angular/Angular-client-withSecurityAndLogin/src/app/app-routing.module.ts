@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DepartmentDetailsComponent } from './department/department-details/department-details.component';
@@ -12,9 +13,9 @@ import { OperationComponent } from './operation/operation.component';
 import { PatientComponent } from './patient/patient.component';
 import { SpecializationComponent } from './specialization/specialization.component';
 import { TestComponent } from './test/test.component';
-import { WardComponent } from './ward/ward.component';
+
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
-import { WardLIstComponent } from './ward/ward-list/ward-list.component';
+
 import { TestListComponent } from './test/test-list/test-list.component';
 import { SpecializationListComponent } from './specialization/specialization-list/specialization-list.component';
 import { PatientListComponent } from './patient/patient-list/patient-list.component';
@@ -22,7 +23,7 @@ import { OperationListComponent } from './operation/operation-list/operation-lis
 import { MedicosListComponent } from './medicos/medicos-list/medicos-list.component';
 import { InsuranceListComponent } from './insurance/insurance-list/insurance-list.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
-import { WardDeatilsComponent } from './ward/ward-deatils/ward-deatils.component';
+
 import { TestDetailsComponent } from './test/test-details/test-details.component';
 import { SpecializationDetailsComponent } from './specialization/specialization-details/specialization-details.component';
 import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
@@ -39,13 +40,16 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { AboutUsComponent } from './menu/about-us/about-us.component';
 import { ContactUsComponent } from './menu/contact-us/contact-us.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'signup', pathMatch:'full'},
+  {path: '', redirectTo: 'login', pathMatch:'full'},
   { path: 'login', component: LoginComponent},
   { path: 'index', component: IndexComponent},
-
+  { path: 'header', component: HeaderComponent},
+  { path: 'footer', component: FooterComponent},
   {path: 'home', component:HomeComponent},
   {path: 'about', component:AboutUsComponent},
   {path: 'contact', component:ContactUsComponent},
@@ -103,10 +107,7 @@ const routes: Routes = [
   { path: 'testUpdate/:id' , component: TestComponent },
   { path: 'testDetail/:id' , component: TestDetailsComponent },
 
-  { path: 'ward', component: WardComponent},
-  { path: 'wardList', component: WardLIstComponent},
-  { path: 'wardUpdate/:id', component: WardComponent},
-  { path: 'wardDetail/:id', component: WardDeatilsComponent}
+
 ];
 
 @NgModule({
